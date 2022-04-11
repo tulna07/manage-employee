@@ -40,7 +40,7 @@ Employee.prototype.calcTotalSalary = function () {
 Employee.prototype.classifyType = function () {
   if (this.workingHours >= 192) {
     // Nhân viên xuất sắc
-    this.type = "Excelent";
+    this.type = "Excellent";
     return;
   }
   if (this.workingHours >= 176) {
