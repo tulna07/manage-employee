@@ -32,7 +32,7 @@ Employee.prototype.calcTotalSalary = function () {
       this.totalSalary = 2 * this.basicSalary;
       break;
     case "Nhân viên":
-      this.totalSalary = 3 * this.basicSalary;
+      this.totalSalary = this.basicSalary;
       break;
   }
 };
