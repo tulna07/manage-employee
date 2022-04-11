@@ -34,10 +34,8 @@ The exercise has the following main features:
 | Ngày làm (workingDate)     | - Empty not allowed                                                                |
 |                            | - In format `mm/dd/yyyy`                                                           |
 | Lương cơ bản (basicSalary) | - Empty not allowed                                                                |
-|                            | - Including integers >= 0                                                          |
-|                            | - From 1.000.000 to 20.000.000 (VND) (input without `.`)                           |
+|                            | - Including integers from 1.000.000 to 20.000.000 (VND) (input without `.`)        |
 | Chức vụ (title)            | - Empty not allowed                                                                |
 |                            | - Choose a valid option (not the default one)                                      |
 | Giờ làm (workingHours)     | - Empty not allowed                                                                |
-|                            | - Including integers >= 0                                                          |
-|                            | - From 80 to 200 (hours)                                                           |
+|                            | - Including integers from 80 to 200 (hours)                                        |
