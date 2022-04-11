@@ -25,19 +25,19 @@ The exercise has the following main features:
 |                            | - Including integers >= 0                                                          |
 |                            | - From 4 to 6 characters                                                           |
 | Họ và tên (fullName)       | - Empty not allowed                                                                |
-|                            | - Including letters in the alphabet >= 0                                           |
+|                            | - Including letters in the alphabet                                                |
 | Email                      | - Empty not allowed                                                                |
 |                            | - In a correct format of an email                                                  |
 | Mật khẩu (password)        | - Empty not allowed                                                                |
 |                            | - From 6 to 10 characters                                                          |
-|                            | - contain at least 1 numeric character, 1 uppercase character, 1 special character |
+|                            | - Contain at least 1 numeric character, 1 uppercase character, 1 special character |
 | Ngày làm (workingDate)     | - Empty not allowed                                                                |
 |                            | - In format `mm/dd/yyyy`                                                           |
 | Lương cơ bản (basicSalary) | - Empty not allowed                                                                |
 |                            | - Including integers >= 0                                                          |
 |                            | - From 1.000.000 to 20.000.000 (VND) (input without `.`)                           |
 | Chức vụ (title)            | - Empty not allowed                                                                |
-|                            | - Choose a valid option                                                            |
+|                            | - Choose a valid option (not the default one)                                      |
 | Giờ làm (workingHours)     | - Empty not allowed                                                                |
 |                            | - Including integers >= 0                                                          |
 |                            | - From 80 to 200 (hours)                                                           |
