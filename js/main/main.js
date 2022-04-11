@@ -45,6 +45,11 @@ function setLocalStorage() {
   }
 })();
 
+//-------------------------------------------------------------------
+/**
+ * Main features
+ */
+
 // Create table of employee
 function createTable(employeeList) {
   content = "";
@@ -67,20 +72,13 @@ function createTable(employeeList) {
   table.innerHTML = content;
 }
 
-//-------------------------------------------------------------------
-/**
- * Main features
- */
 keyword.addEventListener("keyup", function () {
   const employeeListByType = employeeList.findEmployeeByType(
     keyword.value.trim()
   );
-  if (!employeeListByType.length) {
-    createTable(employeeList.list);
-    return;
-  }
-
-  createTable(employeeListByType);
+  createTable(
+    !employeeListByType.length ? employeeList.list : employeeListByType
+  );
 });
 
 function isValidEmployeeInfo(
@@ -295,8 +293,8 @@ addEmployeeBtn.addEventListener("click", function () {
     return;
   }
 
-  employeeList.add(employee);
   getElem("tbTKNV").style.display = "none";
+  employeeList.add(employee);
 
   setLocalStorage();
   createTable(employeeList.list);
