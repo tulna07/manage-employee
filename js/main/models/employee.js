@@ -43,16 +43,19 @@ Employee.prototype.classifyType = function () {
     this.type = "Excellent";
     return;
   }
+
   if (this.workingHours >= 176) {
     // Nhân viên giỏi
     this.type = "Very Good";
     return;
   }
+
   if (this.workingHours >= 160) {
     // Nhân viên khá
     this.type = "Good";
     return;
   }
+
   // Nhân viên trung bình
   this.type = "Average";
 };
