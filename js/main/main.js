@@ -1,6 +1,8 @@
-const getElem = id => document.getElementById(id);
+/**
+ * Dom manipulation
+ */
 
-const employeeList = new EmployeeList();
+const getElem = id => document.getElementById(id);
 
 // Input dom
 const account = getElem("tknv");
@@ -13,9 +15,20 @@ const title = getElem("chucvu");
 const workingHours = getElem("gioLam");
 const keyword = getElem("searchName");
 
+// Output dom
+const table = getElem("tableDanhSach");
+
 // Btn dom
 const addEmployeeBtn = getElem("btnThemNV");
 const updateEmployeeBtn = getElem("btnCapNhat");
+
+//-------------------------------------------------------------------
+/**
+ * Helpers and initializers
+ */
+// Initializers
+const employeeList = new EmployeeList();
+const validation = new Validation();
 
 // Local storage handler
 function setLocalStorage() {
@@ -51,9 +64,13 @@ function createTable(employeeList) {
     `;
   }
 
-  getElem("tableDanhSach").innerHTML = content;
+  table.innerHTML = content;
 }
 
+//-------------------------------------------------------------------
+/**
+ * Main features
+ */
 keyword.addEventListener("keyup", function () {
   const employeeListByType = employeeList.findEmployeeByType(
     keyword.value.trim()
@@ -66,7 +83,6 @@ keyword.addEventListener("keyup", function () {
   createTable(employeeListByType);
 });
 
-const validation = new Validation();
 function isValidEmployeeInfo(
   account,
   fullName,
@@ -137,12 +153,20 @@ function isValidEmployeeInfo(
     );
 
   // Validate working date
-  isValid &= validation.isValid(
-    isEmpty,
-    workingDate,
-    "tbNgay",
-    "(*) Vui lòng không để trống ngày làm việc"
-  );
+  isValid &=
+    validation.isValid(
+      isEmpty,
+      workingDate,
+      "tbNgay",
+      "(*) Vui lòng không để trống ngày làm việc"
+    ) &&
+    validation.isValid(
+      isValidPattern,
+      workingDate,
+      "tbNgay",
+      "Định dạng ngày làm việc phải là dd/mm/yyyy",
+      /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/
+    );
 
   // Validate password
   isValid &=
